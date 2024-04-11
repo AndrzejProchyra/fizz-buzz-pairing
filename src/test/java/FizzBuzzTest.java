@@ -15,4 +15,10 @@ class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat(fizzBuzz.fizzBuzzOf(2)).isEqualTo("2");
     }
+
+    @Test
+    void when_provided_3_returns_Fizz() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertThat(fizzBuzz.fizzBuzzOf(3)).isEqualTo("Fizz");
+    }
 }
