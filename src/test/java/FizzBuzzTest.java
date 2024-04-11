@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,10 +19,11 @@ class FizzBuzzTest {
         assertThat(fizzBuzz.fizzBuzzOf(2)).isEqualTo("2");
     }
 
-    @Test
-    void when_provided_3_returns_Fizz() {
+    @ParameterizedTest
+    @ValueSource(ints = 3)
+    void when_provided_3_returns_Fizz(int number) {
         FizzBuzz fizzBuzz = new FizzBuzz();
-        assertThat(fizzBuzz.fizzBuzzOf(3)).isEqualTo("Fizz");
+        assertThat(fizzBuzz.fizzBuzzOf(number)).isEqualTo("Fizz");
     }
 
     @Test
@@ -39,5 +43,4 @@ class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat(fizzBuzz.fizzBuzzOf(30)).isEqualTo("FizzBuzz");
     }
-
 }
