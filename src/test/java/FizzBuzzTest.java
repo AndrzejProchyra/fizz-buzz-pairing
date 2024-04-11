@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -20,8 +19,8 @@ class FizzBuzzTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = 3)
-    void when_provided_3_returns_Fizz(int number) {
+    @ValueSource(ints = {3, 6})
+    void when_provided_a_number_divisible_by_3_returns_Fizz(int number) {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat(fizzBuzz.fizzBuzzOf(number)).isEqualTo("Fizz");
     }
