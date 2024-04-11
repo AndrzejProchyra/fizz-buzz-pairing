@@ -33,4 +33,11 @@ class FizzBuzzTest {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat(fizzBuzz.fizzBuzzOf(15)).isEqualTo("FizzBuzz");
     }
+
+    @Test
+    void when_provided_30_returns_FizzBuzz() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertThat(fizzBuzz.fizzBuzzOf(30)).isEqualTo("FizzBuzz");
+    }
+
 }
