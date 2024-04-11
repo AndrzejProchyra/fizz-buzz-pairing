@@ -26,8 +26,8 @@ class FizzBuzzTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {5})
-    void when_provided_5_returns_Buzz(int number) {
+    @ValueSource(ints = {5, 10})
+    void when_provided_a_number_divisible_by_5_returns_Buzz(int number) {
         FizzBuzz fizzBuzz = new FizzBuzz();
         assertThat(fizzBuzz.fizzBuzzOf(number)).isEqualTo("Buzz");
     }
