@@ -25,10 +25,11 @@ class FizzBuzzTest {
         assertThat(fizzBuzz.fizzBuzzOf(number)).isEqualTo("Fizz");
     }
 
-    @Test
-    void when_provided_5_returns_Buzz() {
+    @ParameterizedTest
+    @ValueSource(ints = {5})
+    void when_provided_5_returns_Buzz(int number) {
         FizzBuzz fizzBuzz = new FizzBuzz();
-        assertThat(fizzBuzz.fizzBuzzOf(5)).isEqualTo("Buzz");
+        assertThat(fizzBuzz.fizzBuzzOf(number)).isEqualTo("Buzz");
     }
 
     @Test
